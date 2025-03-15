@@ -1,19 +1,27 @@
 ---
-import "@/styles/global.css";
+import { getLocale } from "astro-i18n-aut";
+
 import SEO from "@/components/SEO.astro";
 
+import "@/styles/global.css";
+
 interface Props {
-	title: string;
+	title?: string;
+	description?: string;
 }
+
+const lang = getLocale(Astro.url);
 
 const seoData = {
 	title: Astro.props.title || "Relojero Express",
-	description: "Venta, mantenimiento y reparación de relojes en Buenos Aires",
+	description:
+		Astro.props.description ||
+		"Venta, mantenimiento y reparación de relojes en Buenos Aires",
 };
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
 	<head>
 		<SEO {...seoData} />
 	</head>
