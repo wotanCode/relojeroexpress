@@ -1,0 +1,60 @@
+---
+import { useI18n } from "../i18n/i18n";
+import { COMPANY_INFO } from "../constants/contact";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const t = useI18n(Astro);
+const { description } = Astro.props;
+const title = Astro.props.title ? `${Astro.props.title} | ${COMPANY_INFO.NAME}` : COMPANY_INFO.NAME;
+
+const metaDescription = description || t("meta.description");
+const keywords = t("meta.keywords");
+---
+
+<>
+  <!-- Primary Meta Tags -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={metaDescription} />
+  <meta name="keywords" content={keywords} />
+  <meta name="author" content={COMPANY_INFO.WEBSITE_AUTHOR} />
+  <meta name="generator" content={Astro.generator} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={metaDescription} />
+  <meta property="og:site_name" content={COMPANY_INFO.NAME} />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content={title} />
+  <meta property="twitter:description" content={metaDescription} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+  <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <title>{title}</title>
+</>
