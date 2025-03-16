@@ -1,48 +1,100 @@
-# Astro Starter Kit: Basics
+# 🕰️ Relojero Express
 
-```sh
-npm create astro@latest -- --template basics
+<div align="center">
+
+[![Astro Badge](https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=fff&style=flat)](https://astro.build/)
+[![TailwindCSS Badge](https://img.shields.io/badge/Tailwind%20CSS-06B6D4?logo=tailwindcss&logoColor=fff&style=flat)](https://tailwindcss.com/)
+[![GSAP Badge](https://img.shields.io/badge/GSAP-88CE02?logo=greensock&logoColor=fff&style=flat)](https://greensock.com/gsap/)
+
+</div>
+
+## 📝 Descripción
+
+Sitio web profesional para Relojero Express, expertos en reparación y mantenimiento de relojes. Desarrollado con tecnologías modernas para ofrecer una experiencia de usuario excepcional.
+
+## ✨ Características
+
+- 🎨 Diseño moderno y responsivo
+- 🌐 Soporte multilenguaje (i18n)
+- 🚀 Optimizado para rendimiento
+- 📱 Experiencia móvil mejorada
+- 🎯 SEO optimizado
+- ⚡ Animaciones suaves con GSAP
+- 🎵 Efectos visuales únicos
+- 🔒 Enlaces seguros con atributos de seguridad
+
+## 🛠️ Stack Tecnológico
+
+<div align="center">
+
+| Tecnología | Descripción |
+|------------|-------------|
+| [Astro](https://astro.build/) | Framework web moderno y rápido |
+| [TailwindCSS](https://tailwindcss.com/) | Framework CSS utilitario |
+| [GSAP](https://greensock.com/gsap/) | Biblioteca de animaciones profesional |
+| [FontAwesome](https://fontawesome.com/) | Iconos vectoriales escalables |
+
+</div>
+
+## 🚀 Instalación
+
+1. Clona el repositorio:
+```bash
+git clone https://github.com/wotanCode/relojeroexpress.git
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+2. Instala las dependencias:
+```bash
+npm install
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+3. Inicia el servidor de desarrollo:
+```bash
+npm run dev
+```
 
-## 🧞 Commands
+4. Construye para producción:
+```bash
+npm run build
+```
 
-All commands are run from the root of the project, from a terminal:
+## 🎨 Características de Diseño
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- **Navbar Moderno**: 
+  - Efecto glassmorphism con backdrop-blur
+  - Transiciones suaves al hacer scroll
+  - Menú móvil optimizado
 
-## 👀 Want to learn more?
+- **Efectos Visuales**:
+  - Patrón de ruido dinámico para fondos oscuros
+  - Animaciones GSAP para elementos clave
+  - Transiciones fluidas entre secciones
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- **Optimizaciones**:
+  - Diseño responsive para todos los dispositivos
+  - Carga optimizada de recursos
+  - Sistema de colores consistente
+  - SEO mejorado con meta tags
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## 👤 Autor
+
+<div align="center">
+
+**Pedro Yanez**
+
+[![GitHub Badge](https://img.shields.io/badge/GitHub-wotanCode-181717?logo=github&logoColor=fff&style=flat)](https://github.com/wotanCode)
+
+</div>
+
+---
+
+<div align="center">
+
+⌨️ con ❤️ por [Pedro Yanez](https://github.com/wotanCode) 😊
+<p>Casi todos los derechos reservados...</p>
+
+</div>
