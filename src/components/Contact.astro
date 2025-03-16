@@ -31,8 +31,7 @@ const t = useI18n(Astro);
             >
               <i
                 class="fab fa-whatsapp text-3xl mr-4 text-[#0197d5] group-hover:scale-110 transition-transform"
-                aria-hidden="true"
-              ></i>
+                aria-hidden="true"></i>
               <span>WhatsApp: {CONTACT_INFO.PHONE.DISPLAY}</span>
             </a>
 
@@ -45,9 +44,10 @@ const t = useI18n(Astro);
             >
               <i
                 class="fab fa-instagram text-3xl mr-4 text-[#0197d5] group-hover:scale-110 transition-transform"
-                aria-hidden="true"
-              ></i>
-              <span>Instagram: @{CONTACT_INFO.SOCIAL_MEDIA.INSTAGRAM.USERNAME}</span>
+                aria-hidden="true"></i>
+              <span>
+                Instagram: @{CONTACT_INFO.SOCIAL_MEDIA.INSTAGRAM.USERNAME}
+              </span>
             </a>
 
             <a
@@ -59,18 +59,21 @@ const t = useI18n(Astro);
             >
               <i
                 class="fab fa-tiktok text-3xl mr-4 text-[#0197d5] group-hover:scale-110 transition-transform"
-                aria-hidden="true"
-              ></i>
+                aria-hidden="true"></i>
               <span>TikTok: @{CONTACT_INFO.SOCIAL_MEDIA.TIKTOK.USERNAME}</span>
             </a>
 
             <div class="flex items-center text-white group">
-              <i class="fas fa-map-marker-alt text-3xl mr-4 text-[#0197d5]" aria-hidden="true"></i>
+              <i
+                class="fas fa-map-marker-alt text-3xl mr-4 text-[#0197d5]"
+                aria-hidden="true"></i>
               <span>{t("contact.address")}</span>
             </div>
 
             <div class="flex items-center text-white group">
-              <i class="fas fa-clock text-3xl mr-4 text-[#0197d5]" aria-hidden="true"></i>
+              <i
+                class="fas fa-clock text-2xl mr-4 text-[#0197d5]"
+                aria-hidden="true"></i>
               <span>{t("contact.schedule")}</span>
             </div>
           </div>
@@ -87,7 +90,8 @@ const t = useI18n(Astro);
           referrerpolicy="no-referrer-when-downgrade"
           title={t("aria.location.map")}
           class="rounded-lg"
-        ></iframe>
+        >
+        </iframe>
       </div>
     </div>
   </div>
