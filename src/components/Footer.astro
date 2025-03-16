@@ -1,0 +1,102 @@
+---
+import { CONTACT_INFO, BRAND_COLORS, COMPANY_INFO } from "../constants/contact";
+import { useI18n } from "../i18n/i18n";
+
+const t = useI18n(Astro);
+---
+
+<footer class="bg-[#1e1c1d] text-white py-12">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Company Info -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">{COMPANY_INFO.NAME}</h3>
+        <p class="text-gray-400">
+          {t("company.description")}
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">{t("footer.links")}</h3>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="#inicio"
+              class="text-gray-400 hover:text-[#0197d5] transition-colors"
+              aria-label={t("aria.navigation.home")}
+            >
+              {t("footer.home")}
+            </a>
+          </li>
+          <li>
+            <a
+              href="#servicios"
+              class="text-gray-400 hover:text-[#0197d5] transition-colors"
+              aria-label={t("aria.navigation.services")}
+            >
+              {t("footer.services")}
+            </a>
+          </li>
+          <li>
+            <a
+              href="#contacto"
+              class="text-gray-400 hover:text-[#0197d5] transition-colors"
+              aria-label={t("aria.navigation.contact")}
+            >
+              {t("footer.contact")}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Social -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">{t("footer.social")}</h3>
+        <div class="flex space-x-4">
+          <a
+            href={CONTACT_INFO.SOCIAL_MEDIA.INSTAGRAM.URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gray-400 hover:text-[#0197d5] transition-colors"
+            aria-label={t("aria.social.instagram")}
+          >
+            <i class="fab fa-instagram text-2xl" aria-hidden="true"></i>
+          </a>
+          <a
+            href={CONTACT_INFO.SOCIAL_MEDIA.TIKTOK.URL}
+            target="_blank"
+            class="text-gray-400 hover:text-[#0197d5] transition-colors"
+          >
+            <i class="fab fa-tiktok text-2xl"></i>
+          </a>
+          <a
+            href={CONTACT_INFO.PHONE.WHATSAPP_URL}
+            target="_blank"
+            class="text-gray-400 hover:text-[#0197d5] transition-colors"
+          >
+            <i class="fab fa-whatsapp text-2xl"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
+      <p id="copyright"></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  import { useI18n } from "../i18n/i18n";
+  import { COMPANY_INFO } from "../constants/contact";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const t = useI18n({ url: window.location.pathname });
+    const copyrightElement = document.getElementById("copyright");
+    if (copyrightElement) {
+      const currentYear = new Date().getFullYear();
+      copyrightElement.innerHTML = `&copy; ${currentYear} ${COMPANY_INFO.NAME}. ${t("footer.copyright")}`;
+    }
+  });
+</script>
