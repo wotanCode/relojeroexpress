@@ -1,11 +1,13 @@
 ---
 import { useI18n } from "../i18n/i18n";
 import { CONTACT_INFO } from "../constants/contact";
+import Noise from "./Noise.astro";
 
 const t = useI18n(Astro);
 ---
 
-<section id="contacto" class="py-20 bg-[#1e1c1d]">
+<section id="contacto" class="py-20 bg-[#1e1c1d] relative">
+  <Noise />
   <div class="container mx-auto px-4">
     <h2
       class="text-4xl font-bold text-center text-white mb-12 opacity-0"

@@ -1,11 +1,13 @@
 ---
 import { CONTACT_INFO, BRAND_COLORS, COMPANY_INFO } from "../constants/contact";
 import { useI18n } from "../i18n/i18n";
+import Noise from "./Noise.astro";
 
 const t = useI18n(Astro);
 ---
 
-<footer class="bg-[#1e1c1d] text-white py-12">
+<footer class="bg-[#1e1c1d] text-white py-12 relative">
+  <Noise />
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       <!-- Company Info -->
