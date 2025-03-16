@@ -1,0 +1,118 @@
+---
+import { useI18n } from "../i18n/i18n";
+import RelojeroExpressLogo from "@/assets/relojeroExpressLogo.png";
+
+const t = useI18n(Astro);
+---
+
+<nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <a href="#inicio" class="flex items-center">
+        <img
+          src={RelojeroExpressLogo.src}
+          alt={t("aria.brand.logo")}
+          class="h-10"
+        />
+      </a>
+
+      <!-- Navigation Links -->
+      <div class="hidden md:flex space-x-8">
+        <a
+          href="#inicio"
+          class="text-white hover:text-[#0197d5] transition-colors text-sm font-medium"
+          aria-label={t("aria.navigation.home")}
+        >
+          {t("footer.home")}
+        </a>
+        <a
+          href="#servicios"
+          class="text-white hover:text-[#0197d5] transition-colors text-sm font-medium"
+          aria-label={t("aria.navigation.services")}
+        >
+          {t("footer.services")}
+        </a>
+        <a
+          href="#contacto"
+          class="text-white hover:text-[#0197d5] transition-colors text-sm font-medium"
+          aria-label={t("aria.navigation.contact")}
+        >
+          {t("footer.contact")}
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        class="md:hidden text-white focus:outline-none"
+        id="menuButton"
+        aria-label="Toggle menu"
+      >
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden hidden" id="mobileMenu">
+      <div class="px-2 pt-2 pb-3 space-y-1 rounded-lg backdrop-blur-md bg-white/10">
+        <a
+          href="#inicio"
+          class="block px-3 py-2 text-white hover:text-[#0197d5] transition-colors text-sm font-medium"
+          aria-label={t("aria.navigation.home")}
+        >
+          {t("footer.home")}
+        </a>
+        <a
+          href="#servicios"
+          class="block px-3 py-2 text-white hover:text-[#0197d5] transition-colors text-sm font-medium"
+          aria-label={t("aria.navigation.services")}
+        >
+          {t("footer.services")}
+        </a>
+        <a
+          href="#contacto"
+          class="block px-3 py-2 text-white hover:text-[#0197d5] transition-colors text-sm font-medium"
+          aria-label={t("aria.navigation.contact")}
+        >
+          {t("footer.contact")}
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const navbar = document.getElementById("navbar");
+  const menuButton = document.getElementById("menuButton");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  // Función para actualizar el navbar según el scroll
+  function updateNavbar() {
+    if (window.scrollY > 0) {
+      navbar?.classList.add("backdrop-blur-md", "bg-black/30", "shadow-lg");
+    } else {
+      navbar?.classList.remove("backdrop-blur-md", "bg-black/30", "shadow-lg");
+    }
+  }
+
+  // Inicializar el estado del navbar
+  updateNavbar();
+
+  // Actualizar en scroll
+  window.addEventListener("scroll", updateNavbar);
+
+  // Manejo del menú móvil
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Cerrar menú al hacer click en un enlace
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+    mobileLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+  }
+</script>

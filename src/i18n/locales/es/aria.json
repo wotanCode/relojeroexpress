@@ -6,7 +6,9 @@
   },
   "social": {
     "instagram": "Visitar nuestro perfil de Instagram",
-    "instagram_icon": "Ícono de Instagram"
+    "instagram_icon": "Ícono de Instagram",
+    "whatsapp": "Contactar por WhatsApp",
+    "tiktok": "Visitar nuestro perfil de TikTok"
   },
   "location": {
     "map": "Mapa mostrando la ubicación de Relojero Express",
@@ -18,5 +20,8 @@
     "maintenance_icon": "Ícono de mantenimiento",
     "battery_icon": "Ícono de batería",
     "strap_icon": "Ícono de correa"
+  },
+  "brand": {
+    "logo": "Logo de Relojero Express"
   }
 }

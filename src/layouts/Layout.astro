@@ -1,6 +1,7 @@
 ---
 import { getLocale } from "astro-i18n-aut";
 import Head from "@/components/Head.astro";
+import Navbar from "@/components/Navbar.astro";
 import "@/styles/global.css";
 
 interface Props {
@@ -67,11 +68,12 @@ const lang = getLocale(Astro.url);
            |_______^______________|,|
            |                      |   SSt
 		   -->
+		<Navbar />
 		<slot />
 	</body>
 </html>
 
-<style>
+<style is:global>
 	html,
 	body {
 		margin: 0;
