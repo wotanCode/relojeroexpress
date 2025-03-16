@@ -5,11 +5,28 @@ import { COMPANY_INFO } from "../constants/contact";
 interface Props {
   title?: string;
   description?: string;
+  image?: {
+    meta?: string;
+    x?: string;
+    linkedin?: string;
+  };
 }
 
 const t = useI18n(Astro);
 const { description } = Astro.props;
 const title = Astro.props.title ? `${Astro.props.title} | ${COMPANY_INFO.NAME}` : COMPANY_INFO.NAME;
+
+const defaultImages = {
+  meta: "/ogMeta.png",
+  x: "/ogX.png",
+  linkedin: "/ogLinkedin.png"
+};
+
+const images = {
+  meta: Astro.props.image?.meta || defaultImages.meta,
+  x: Astro.props.image?.x || defaultImages.x,
+  linkedin: Astro.props.image?.linkedin || defaultImages.linkedin
+};
 
 const metaDescription = description || t("meta.description");
 const keywords = t("meta.keywords");
@@ -24,16 +41,23 @@ const keywords = t("meta.keywords");
   <meta name="author" content={COMPANY_INFO.WEBSITE_AUTHOR} />
   <meta name="generator" content={Astro.generator} />
 
-  <!-- Open Graph / Facebook -->
+  <!-- Open Graph / Facebook / Meta -->
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={metaDescription} />
   <meta property="og:site_name" content={COMPANY_INFO.NAME} />
+  <meta property="og:image" content={new URL(images.meta, Astro.url)} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
-  <!-- Twitter -->
+  <!-- Twitter / X -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:title" content={title} />
   <meta property="twitter:description" content={metaDescription} />
+  <meta property="twitter:image" content={new URL(images.x, Astro.url)} />
+
+  <!-- LinkedIn -->
+  <meta property="og:image" content={new URL(images.linkedin, Astro.url)} />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
