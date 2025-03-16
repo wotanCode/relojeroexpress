@@ -13,7 +13,7 @@ const t = useI18n(Astro);
         <img
           src={RelojeroExpressLogo.src}
           alt={t("aria.brand.logo")}
-          class="h-10"
+          class="h-12"
         />
       </a>
 
@@ -54,7 +54,9 @@ const t = useI18n(Astro);
 
     <!-- Mobile Menu -->
     <div class="md:hidden hidden" id="mobileMenu">
-      <div class="px-2 pt-2 pb-3 space-y-1 rounded-lg backdrop-blur-md bg-white/10">
+      <div
+        class="px-2 pt-2 pb-3 space-y-1 rounded-lg backdrop-blur-md bg-white/10"
+      >
         <a
           href="#inicio"
           class="block px-3 py-2 text-white hover:text-[#0197d5] transition-colors text-sm font-medium"
