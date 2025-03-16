@@ -1,0 +1,22 @@
+{
+  "navigation": {
+    "home": "Ir a inicio",
+    "services": "Ir a servicios",
+    "contact": "Ir a contacto"
+  },
+  "social": {
+    "instagram": "Visitar nuestro perfil de Instagram",
+    "instagram_icon": "Ícono de Instagram"
+  },
+  "location": {
+    "map": "Mapa mostrando la ubicación de Relojero Express",
+    "address_icon": "Ícono de ubicación",
+    "schedule_icon": "Ícono de horario"
+  },
+  "services": {
+    "repair_icon": "Ícono de reparación",
+    "maintenance_icon": "Ícono de mantenimiento",
+    "battery_icon": "Ícono de batería",
+    "strap_icon": "Ícono de correa"
+  }
+}
