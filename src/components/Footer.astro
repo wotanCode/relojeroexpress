@@ -1,7 +1,7 @@
 ---
-import { CONTACT_INFO, BRAND_COLORS, COMPANY_INFO } from "../constants/contact";
-import { useI18n } from "../i18n/i18n";
-import Noise from "./Noise.astro";
+import { CONTACT_INFO, COMPANY_INFO } from "@/constants/contact";
+import { useI18n } from "@/i18n/i18n";
+import Noise from "@/components/Noise.astro";
 
 const t = useI18n(Astro);
 ---
@@ -90,8 +90,8 @@ const t = useI18n(Astro);
 </footer>
 
 <script>
-  import { useI18n } from "../i18n/i18n";
-  import { COMPANY_INFO } from "../constants/contact";
+  import { useI18n } from "@/i18n/i18n";
+  import { COMPANY_INFO } from "@/constants/contact";
 
   document.addEventListener("DOMContentLoaded", () => {
     const t = useI18n({ url: window.location.pathname });

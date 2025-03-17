@@ -1,5 +1,5 @@
 import { getLocale } from "astro-i18n-aut";
-import { translations } from "./locales";
+import { translations } from "@/i18n/locales";
 
 type AnyRecord = Record<string, any>;
 
