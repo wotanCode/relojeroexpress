@@ -13,19 +13,21 @@ interface Props {
 }
 
 const t = useI18n(Astro);
-const { description } = Astro.props;
-const title = Astro.props.title ? `${Astro.props.title} | ${COMPANY_INFO.NAME}` : COMPANY_INFO.NAME;
+const { title: propTitle, description, image } = Astro.props;
+const title = propTitle
+  ? `${propTitle} | ${COMPANY_INFO.NAME}`
+  : COMPANY_INFO.NAME;
 
 const defaultImages = {
   meta: "/ogMeta.png",
   x: "/ogX.png",
-  linkedin: "/ogLinkedin.png"
+  linkedin: "/ogLinkedin.png",
 };
 
 const images = {
-  meta: Astro.props.image?.meta || defaultImages.meta,
-  x: Astro.props.image?.x || defaultImages.x,
-  linkedin: Astro.props.image?.linkedin || defaultImages.linkedin
+  meta: image?.meta || defaultImages.meta,
+  x: image?.x || defaultImages.x,
+  linkedin: image?.linkedin || defaultImages.linkedin,
 };
 
 const metaDescription = description || t("meta.description");
@@ -46,18 +48,20 @@ const keywords = t("meta.keywords");
   <meta property="og:title" content={title} />
   <meta property="og:description" content={metaDescription} />
   <meta property="og:site_name" content={COMPANY_INFO.NAME} />
-  <meta property="og:image" content={new URL(images.meta, Astro.url)} />
+  <meta property="og:image" content={images.meta} />
+  <meta property="og:image:secure_url" content={images.meta} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:type" content="image/png" />
 
   <!-- Twitter / X -->
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:title" content={title} />
   <meta property="twitter:description" content={metaDescription} />
-  <meta property="twitter:image" content={new URL(images.x, Astro.url)} />
+  <meta property="twitter:image" content={images.x} />
 
   <!-- LinkedIn -->
-  <meta property="og:image" content={new URL(images.linkedin, Astro.url)} />
+  <meta property="og:image:secure_url" content={images.linkedin} />
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
@@ -66,8 +70,16 @@ const keywords = t("meta.keywords");
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="anonymous" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin="anonymous"
+  />
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
