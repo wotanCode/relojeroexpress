@@ -1,0 +1,15 @@
+---
+import { useI18n } from "@/i18n/i18n";
+import Socialvideos from '@/content/Socialvideos.md';
+
+const t = useI18n(Astro);
+---
+
+<section class="py-12 px-4 bg-gray-50">
+  <div class="container mx-auto">
+    <!-- <h2 class="text-3xl font-bold text-center mb-8">{t("social.latestVideos")}</h2> -->
+    <h2 class="text-3xl font-bold text-center mb-8">{t("losvideos")}</h2>
+
+    <Socialvideos />
+  </div>
+</section>

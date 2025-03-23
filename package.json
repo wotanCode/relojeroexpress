@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "update-social": "node src/scripts/updateSocialVideos.js"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
@@ -14,6 +15,7 @@
     "astro": "^5.5.1",
     "astro-i18n-aut": "^0.7.3",
     "gsap": "^3.12.7",
+    "node-fetch": "^3.3.2",
     "tailwindcss": "^4.0.14"
   }
 }
