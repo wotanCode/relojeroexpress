@@ -15,3 +15,24 @@ const t = useI18n(Astro);
     </div>
   </div>
 </section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".instagram-post", {
+    scrollTrigger: {
+      trigger: ".instagram-post",
+      start: "top 80%",
+    },
+    opacity: 0,
+    scale: 0.8,
+    duration: 1,
+    ease: "power4.out",
+    stagger: 0.3,
+  });
+});
+</script>
