@@ -1,15 +1,17 @@
 ---
 import { useI18n } from "@/i18n/i18n";
-import Socialvideos from '@/content/Socialvideos.md';
+import InstagramPost from '@/content/InstagramPost.md';
 
 const t = useI18n(Astro);
 ---
 
 <section class="py-12 px-4 bg-gray-50">
   <div class="container mx-auto">
-    <!-- <h2 class="text-3xl font-bold text-center mb-8">{t("social.latestVideos")}</h2> -->
-    <h2 class="text-3xl font-bold text-center mb-8">{t("losvideos")}</h2>
+    <h2 class="text-3xl font-bold text-center mb-8">{t("rrss.instagramLastPosts")}</h2>
 
-    <Socialvideos />
+    <div class="flex flex-wrap -m-2 justify-center">
+        <InstagramPost />
+      </div>
+    </div>
   </div>
 </section>
