@@ -1,6 +1,7 @@
 import { promises as fs } from 'fs'
 import path from 'path'
 import dotenv from 'dotenv';
+import fetch from 'node-fetch'
 
 dotenv.config();  // load environment variables from .env file
 
