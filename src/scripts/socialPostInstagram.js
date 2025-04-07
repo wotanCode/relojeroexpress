@@ -9,30 +9,26 @@ const INSTAGRAM_ACCESS_TOKEN = process.env.INSTAGRAM_ACCESS_TOKEN;
 const NUMBER_OF_POST = 6
 const PLACEHOLDER_LATEST_INSTAGRAM = '%{{latest_instagram}}%'
 
-// FOR DEV TESTING
-// const INSTAGRAM_ACCESS_TOKEN = 'directTokenHere'
-
 const getLatestInstagramPosts = async () => {
   try {
     const response = await fetch(
       `https://graph.instagram.com/me/media?fields=id,media_type,media_url,thumbnail_url,permalink&access_token=${INSTAGRAM_ACCESS_TOKEN}&limit=${NUMBER_OF_POST}`
     );
     
-    // Verifica si la respuesta es exitosa
     if (!response.ok) {
       const errorData = await response.json();
-      console.error('❌ Error de la API:', errorData);
+      console.error('❌ API error:', errorData);
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
     const data = await response.json();
-    console.log('Respuesta de la API:', data);
     return data.data;
   } catch (error) {
-    console.error('❌ Fallo en getLatestInstagramPosts:', error);
+    console.error('❌ Failed in getLatestInstagramPosts:', error);
     throw error;
   }
 };
+
 
 const generateInstagramHTML = ({ permalink, media_type, thumbnail_url, media_url, id }) => {
   const imageSrc = media_type === 'VIDEO' ? thumbnail_url : media_url
@@ -53,7 +49,7 @@ const updateInstagramComponent = async () => {
     const instagramPosts = await getLatestInstagramPosts()
 
     if (!instagramPosts || !Array.isArray(instagramPosts)) {
-      throw new Error("No se recibieron posts de Instagram");
+      throw new Error("No posts received from Instagram");
     }
 
     const instagramHTML = instagramPosts
@@ -70,7 +66,7 @@ const updateInstagramComponent = async () => {
 
     console.log('✅ Instagram posts markdown generated successfully!')
   } catch (error) {
-    console.error('❌ Error crítico:', error);
+    console.error('❌ Critical error:', error);
     process.exit(1);
   }
 }
