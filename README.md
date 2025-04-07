@@ -48,12 +48,16 @@ git clone https://github.com/wotanCode/relojeroexpress.git
 npm install
 ```
 
-3. Inicia el servidor de desarrollo:
+3. Configura tu archivo de entorno:
+    * Copia el archivo .env.template a un nuevo archivo llamado .env.
+    * En el archivo .env, modifica el valor de INSTAGRAM_ACCESS_TOKEN por tu token de acceso de Instagram.
+
+4. Inicia el servidor de desarrollo:
 ```bash
 npm run dev
 ```
 
-4. Construye para producción:
+5. Construye para producción:
 ```bash
 npm run build
 ```
