@@ -1,0 +1,35 @@
+---
+import { useI18n } from "@/i18n/i18n";
+import InstagramPost from '@/content/InstagramPost.md';
+
+const t = useI18n(Astro);
+---
+
+<section class="container py-12 px-4 mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">{t("rrss.instagramLastPosts")}</h2>
+
+    <div class="flex flex-wrap justify-center">
+        <InstagramPost />
+    </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".instagram-post", {
+    scrollTrigger: {
+      trigger: ".instagram-post",
+      start: "top 80%",
+    },
+    opacity: 0,
+    scale: 0.8,
+    duration: 1,
+    ease: "power4.out",
+    stagger: 0.3,
+  });
+});
+</script>

@@ -5,6 +5,7 @@ import esServices from '@/i18n/locales/es/services.json'
 import esHero from '@/i18n/locales/es/hero.json'
 import esMeta from '@/i18n/locales/es/meta.json'
 import esAria from '@/i18n/locales/es/aria.json'
+import esRrss from '@/i18n/locales/es/rrss.json'
 
 type Translations = {
     [locale: string]: {
@@ -15,6 +16,7 @@ type Translations = {
         services: typeof esServices;
         meta: typeof esMeta;
         aria: typeof esAria;
+        rrss: typeof esRrss;
     };
 };
 
@@ -26,6 +28,7 @@ export const translations: Translations = {
         footer: esFooter,
         services: esServices,
         meta: esMeta,
-        aria: esAria
+        aria: esAria,
+        rrss: esRrss,
     },
 }
