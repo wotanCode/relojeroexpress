@@ -1,7 +1,10 @@
 import { promises as fs } from 'fs'
 import path from 'path'
+import dotenv from 'dotenv';
 
-const INSTAGRAM_ACCESS_TOKEN = import.meta.env.INSTAGRAM_ACCESS_TOKEN
+dotenv.config();  // load environment variables from .env file
+
+const INSTAGRAM_ACCESS_TOKEN = process.env.INSTAGRAM_ACCESS_TOKEN;
 const NUMBER_OF_POST = 6
 const PLACEHOLDER_LATEST_INSTAGRAM = '%{{latest_instagram}}%'
 
