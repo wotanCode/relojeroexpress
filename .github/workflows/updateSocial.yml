@@ -18,6 +18,9 @@ jobs:
         with:
           node-version: "20"
       - run: npm install
+      - run: echo "Token length: ${#INSTAGRAM_ACCESS_TOKEN}"
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
       - run: npm run update-social
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
