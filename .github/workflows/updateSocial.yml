@@ -18,10 +18,17 @@ jobs:
         with:
           node-version: "20"
       - run: npm install
-      - run: npm run update-social
+      - name: Check Token Length
+        run: |
+          echo "Token length: ${#INSTAGRAM_ACCESS_TOKEN}"
         env:
           INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
-      - run: |
+      - name: Update Social Posts
+        run: npm run update-social
+        env:
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+      - name: Commit and Push Changes
+        run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
           git add src/content/InstagramPost.md
