@@ -50,9 +50,9 @@ const updateInstagramComponent = async () => {
     const outputPath = path.join(process.cwd(), 'src', 'content', 'InstagramPost.md')
     await fs.writeFile(outputPath, markdownContent)
 
-    // console.log('✅ Instagram posts markdown generated successfully!')
+    console.log('✅ Instagram posts markdown generated successfully!')
   } catch (error) {
-    // console.error('❌ Error updating Instagram posts:', error)
+    console.error('❌ Error updating Instagram posts:', error)
     process.exit(1)
   }
 }
