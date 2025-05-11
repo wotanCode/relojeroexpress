@@ -39,7 +39,6 @@ jobs:
       - name: Commit and Push Changes
         run: |
           git config user.name "${{ github.actor }}"
-          72775296+wotanCode@users.noreply.github.com
           git config user.email "72775296+${{ github.actor }}@users.noreply.github.com"
           git add src/content/InstagramPost.md
           git diff --quiet && git diff --staged --quiet || git commit -m "[bot] Update Instagram posts [skip ci]"
